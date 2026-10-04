@@ -2,7 +2,7 @@
     "layer": "top",
 	"margin-right": 60,
 	"margin-left": 60,
-    "modules-center": ["clock"],
+    "modules-center": ["clock", "shaw"],
     "modules-right": ["network", "pulseaudio", "battery", "custom/power"],
     "battery": {
         "format": "{capacity}% {icon}",
@@ -48,5 +48,10 @@
 		"tooltip": false,
 		"on-click": "poweroff",
 		"on-click-right": "reboot"
+	},
+	"custom/shaw": {
+		"format": " shaw ",
+		"tooltip": false,
+		"onclick": "mpv --no-audio ~/.shaw.mp3"
 	}
 }	
