@@ -10,6 +10,10 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "nixos"; 
   networking.networkmanager.enable = true;
+  networking.nameservers = [
+    "1.1.1.1"
+	"1.0.0.1"
+  ];
   time.timeZone = "America/Santiago";
   i18n.defaultLocale = "es_CL.UTF-8";
   console = {
@@ -37,15 +41,18 @@
   };
 
   programs.zsh.enable = true;
+  programs.fish.enable = true;
   users.users.felipe = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
       tree
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
+  nixpkgs.config.allowUnfree = true;
   programs.firefox.enable = true;
+  services.cloudflare-warp.enable = true;
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -83,6 +90,12 @@
     hyprlock
     jp2a
     cava
+    btop
+    tmux
+	pipes
+	mpv
+	vscodium
+	cloudflare-warp
   ];
   fonts.packages = with pkgs; [
     font-awesome
