@@ -22,6 +22,9 @@
   };
   services.xserver.enable = true;
   programs.hyprland.enable = true;
+  services.xserver.windowManager.dwm  = {
+    enable = true;
+  };
   services.xserver.xkb.layout = "latam";
   services.xserver.displayManager.lightdm.enable = false;
   services.displayManager.ly.enable = true;
@@ -92,11 +95,14 @@
     cava
     btop
     tmux
-	  pipes
-	  mpv
-	  vscodium
-	  cloudflare-warp
+    pipes
+    mpv
+    vscodium
+    cloudflare-warp
     dosbox
+    dmenu
+    st
+    android-tools
   ];
   fonts.packages = with pkgs; [
     font-awesome
