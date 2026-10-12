@@ -92,10 +92,11 @@
     cava
     btop
     tmux
-	pipes
-	mpv
-	vscodium
-	cloudflare-warp
+	  pipes
+	  mpv
+	  vscodium
+	  cloudflare-warp
+    dosbox
   ];
   fonts.packages = with pkgs; [
     font-awesome
